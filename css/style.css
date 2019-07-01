@@ -1,0 +1,23 @@
+*{
+	position: relative;
+	box-sizing: border-box;
+}
+.footer{
+	background-color: #e9eaee;
+}
+
+.elements{
+	/*border: 1px solid #000;*/
+	border-radius: 10px;
+	color: #000;
+	font-size: 20px;
+	padding: 10px;	
+}
+.footer ul{
+	font-size: 18px;
+	margin: 4px;
+}
+.footer li{
+	font-size: 16px;
+	margin: 8px;
+}
