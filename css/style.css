@@ -14,10 +14,29 @@
 	padding: 8px;	
 }
 .footer ul{
+	font-family: "Roboto", "Helvetica", "Noto Sans TC", "Arial", sans-serif;
 	font-size: 18px;
 	padding: 4px;
+	color: #000;
+	font-weight: 300;
 }
 .footer li{
+	font-family: "Roboto", "Helvetica", "Noto Sans TC", "Arial", sans-serif;
 	font-size: 16px;
 	padding: 8px;
+	color: #000;
+	font-weight: 300;
+}
+.footer .elements ul a{
+	color: #333333;
+
+}
+.fa-line{
+	color: #00c300;
+}
+.fa-facebook-square{
+	color: #3b5998;
+}
+.fa-youtube{
+	color: #ff0000;
 }
