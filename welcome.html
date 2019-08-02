@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+	<meta charset="UTF-8">
+	<title>welcome To TEST </title>
+</head>
+<body>
+	<div class="welcome">
+		<h1>Welcom to TEST</h1>
+	</div>
+	<div id="status"></div>
+	<button onclick="getInfo()">Get Info</button>
+
+	<script>
+		window.fbAsyncInit = function() {
+		FB.init({
+		appId: '326698421605538', // 填入 FB APP ID
+		cookie: true,
+		xfbml: true,
+		version: 'v3.3'
+		});
+
+		FB.getLoginStatus(function(response) {
+		            if (response.status === 'connected') {
+		                document.getElementById('status').innerHTML = 'We are connected.';
+		                document.getElementById('login').style.visibility = 'hidden';
+		            } else if (response.status === 'not_authorized') {
+		                document.getElementById('status').innerHTML = 'We are not logged in.'
+		            } else {
+		                document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+		            }
+		        });
+		    };
+
+		    // 載入 FB SDK
+		    (function(d, s, id){
+		        var js, fjs = d.getElementsByTagName(s)[0];
+		        if (d.getElementById(id)) {return;}
+		        js = d.createElement(s); js.id = id;
+		        js.src = "//connect.facebook.net/en_US/sdk.js";
+		        fjs.parentNode.insertBefore(js, fjs);
+		    }(document, 'script', 'facebook-jssdk'));
+
+		    // getting basic user info
+		    function getInfo() {
+		        FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+		            document.getElementById('status').innerHTML = response.id;
+		        });
+		    }
+		</script>
+
+	</body>
+</html>
