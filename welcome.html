@@ -14,7 +14,7 @@
 	</div>
 	<div id="status"></div>
 		<button onclick="getInfo()">Get Info</button>
-		<button id="FB-logout" class="btn btn--lg btn--warning">FB 登出</button>
+		<button onclick="FB_login()" id="FB_logout" class="btn btn--lg btn--warning">FB 登出</button>
 	</div>
 	
 
@@ -48,6 +48,10 @@
 		        fjs.parentNode.insertBefore(js, fjs);
 		    }(document, 'script', 'facebook-jssdk'));
 
+		     function FB_logout() {
+		        FB.logout(function(response) {
+					statusChangeCallback(response);
+		    	}
 		    // getting basic user info
 		    function getInfo() {
 		        FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
