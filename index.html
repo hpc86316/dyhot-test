@@ -143,6 +143,7 @@
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'We are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
+                document.location.href="welcome.html";
             } else if (response.status === 'not_authorized') {
                 document.getElementById('status').innerHTML = 'We are not logged in.'
             } else {
@@ -167,7 +168,6 @@
                 document.getElementById('status').innerHTML = 'We are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
                 window.location.reload(" ");
-                document.location.href="welcome.html";
             } else if (response.status === 'not_authorized') {
                 document.getElementById('status').innerHTML = 'We are not logged in.'
             } else {
