@@ -134,8 +134,6 @@
 		version: 'v3.3'
 		});
 
-		FB.AppEvents.logPageView();
-
 		FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'We are connected.';
