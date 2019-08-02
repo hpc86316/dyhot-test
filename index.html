@@ -116,11 +116,12 @@
 		<!-- <script data-align="right" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#8BC34A" data-apps="JTdCJTIyZmFjZWJvb2slMjI6JTIyMTAwMDAwMTE2NjIyMjE3JTIyLCUyMmVtYWlsJTIyOiUyMmhwYzg2MzE2QGdtYWlsLmNvbSUyMiU3RA=="></script> -->
 	</div>
 	<!--登入、登出按鈕-->
-	<div id="status"></div>
+	<div id="status" class="u-mt-16"></div>
 	<div class="u-mt-16 u-mb-8">
 		<!-- <button onclick="login()" id="login" class="btn btn--lg btn--primary">FB 登入</button> -->
-		<div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-use-continue-as="true" data-auto-logout-link="true" data-use-continue-as="false"></div>
-	<div id="fb-root"></div>
+		<div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-use-continue-as="true" data-auto-logout-link="true"></div>
+		<div id="fb-root"></div>
+		
 	</div>
 	
 		
@@ -165,6 +166,8 @@
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'We are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
+                window.location.reload(" ");
+                document.location.href="welcome.html";
             } else if (response.status === 'not_authorized') {
                 document.getElementById('status').innerHTML = 'We are not logged in.'
             } else {
@@ -180,6 +183,8 @@
             document.getElementById('status').innerHTML = response.id;
         });
     }
+
+
 </script>
 
 </body>
