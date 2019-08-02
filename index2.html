@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>test footer</title>
+	<link rel="stylesheet" href="css/bass.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<div class="wrapper">
+
+<!----------Section------------>
+		<section>
+			<div class="home4">
+				<div class="container">
+					<div class="row">
+						<div class="home4-1 col-xs-12 col-sm-8">
+							<div class="card">
+								<a href="#">
+									<picture>
+							    		<source srcset="image/home/home-4_190520_X_v1_01.jpg" media="(min-width: 720px)">
+							   			<img src="image/home/home-4_190520_P_v1_1.jpg" alt="My default image">
+									</picture>
+								</a>
+							</div>
+						</div>
+						<div class="home4-2 col-xs-12 col-sm-4">
+							<div class="card">
+								<a href="#"><img src="image/home/home-4_190520_X_v1_02.jpg" alt="#"></a>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="row">
+						<div class="home4-3 col-xs-12 col-sm-6">
+							<div class="card">
+								<img src="image/home/home-4_190520_X_v1_03.jpg" alt="">
+							</div>
+						</div>
+						<div class="home4-4 col-xs-12 col-sm-6">
+							<div class="card">
+								<picture>
+							    	<source srcset="image/home/home-4_190520_X_v1_04.jpg" media="(min-width: 768px)">
+							   		<img src="image/home/home-4_190520_P_v1_4.jpg" alt="My default image">
+								</picture>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+			
+		</section>
+<!----------footer------------>
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-vg-2">
+						<div class="elements"><h5>創新技術</h5>
+							<ul>即熱式燃氣熱水器
+								<li><a href="#">مع ألسنة اللّهب بإشراقتها المتألّقة بفضل تقنيتنا المتقدّمة </a></li>
+								<li><a href="#">安全環保・節能減碳</a></li>
+								<li><a href="#">源源不絕・熱水供應</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-vg-2">
+						<div class="elements"><h5>創新技術</h5>
+							<ul>高效冷凝儲存式熱水器
+								<li><a href="#">儲熱式熱水器-超高效能・全預混燃燒</a></li>
+								<li><a href="#">儲熱式熱水器-安全環保・節能減碳</a></li>
+								<li><a href="#">儲熱式熱水器-源源不絕・熱水供應</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-vg-2">
+						<div class="elements"><h5>商品列表</h5>
+							<ul>即熱式燃氣熱水器
+								<li><a href="#">FEGT 20/24/32</a></li>
+								<li><a href="#">FEDH199</a></li>
+							</ul>
+							<ul>高效冷凝儲存式熱水器
+								<li><a href="#">DH20/40-100T</a></li>
+							</ul>
+						</div>
+					</div>	
+					<div class="col-xs-12 col-sm-6 col-md-3 col-vg-2">
+						<div class="elements"><h5>關於東湧</h5>
+							<ul><a href="#">وقود Lovinflame</a></ul>
+							<ul><a href="#">客戶服務</a></ul>
+							<ul><a href="#">影音專區</a></ul>
+							<ul><a href="#">新聞報導</a></ul>
+							<ul><a href="#">經典安裝</a></ul>
+							<ul><a href="#">服務據點</a></ul>
+						</div>
+					</div>
+					<div class="col-xs-12 col-vg-4 io-color">
+						<div class="elements"><h5>關注更多</h5>
+							<ul>
+								<a href="#"><i class="fab fa-line fa-2x"></i></a>
+								<a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+								<a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+							</ul>
+							<ul>حقوق الطّبع والنّشر © عام 2018 لشركة Lovinflame – جميع الحقوق محفوظة.</ul>
+							<ul>客服專線(手機)：02-2659-9284</ul>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</footer>
+<!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
+<!-- Advanced options: -->
+<!-- data-align="left" -->
+<!-- data-overlay="true" -->
+		<!-- <script data-align="right" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#8BC34A" data-apps="JTdCJTIyZmFjZWJvb2slMjI6JTIyMTAwMDAwMTE2NjIyMjE3JTIyLCUyMmVtYWlsJTIyOiUyMmhwYzg2MzE2QGdtYWlsLmNvbSUyMiU3RA=="></script> -->
+	</div>
+	<!--登入、登出按鈕-->
+<button id="FB_login" class="btn btn--lg btn--primary">FB 登入</button> <button id="FB_logout" class="btn btn--lg btn--warning">FB 登出</button>
+
+<!-- 目前狀態： -->
+<span id="FB_STATUS_2"></span>
+
+<script>
+window.fbAsyncInit = function() {
+FB.init({
+appId: '326698421605538', // 填入 FB APP ID
+cookie: true,
+xfbml: true,
+version: 'v3.3'
+});
+
+FB.getLoginStatus(function(response) {
+statusChangeCallback(response);
+});
+};
+
+// 處理各種登入身份
+function statusChangeCallback(response) {
+console.log(response);
+var target = document.getElementById("FB_STATUS_2"),
+html = "";
+
+// 登入 FB 且已加入會員
+if (response.status === 'connected') {
+html = "已登入 FB，並加入 WFU BLOG DEMO 應用程式<br/>";
+
+FB.api('/me?fields=id,name,email', function(response) {
+console.log(response);
+html += "會員暱稱：" + response.name + "<br/>";
+html += "會員 email：" + response.email;
+target.innerHTML = html;
+});
+}
+
+// 登入 FB, 未偵測到加入會員
+else if (response.status === "not_authorized") {
+target.innerHTML = "已登入 FB，但未加入 WFU BLOG DEMO 應用程式";
+}
+
+// 未登入 FB
+else {
+target.innerHTML = "未登入 FB";
+}
+}
+
+// 點擊登入
+$("#FB_login").click(function() {
+// 進行登入程序
+FB.login(function(response) {
+statusChangeCallback(response);
+}, {
+scope: 'public_profile,email'
+});
+});
+
+// 點擊登出
+$("#FB_logout").click(function() {
+FB.logout(function(response) {
+statusChangeCallback(response);
+});
+});
+
+// 載入 FB SDK
+(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s);
+js.id = id;
+js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+</body>
+</html>

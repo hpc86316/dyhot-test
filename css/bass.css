@@ -3155,6 +3155,9 @@ ul{
 .btn.btn--negative{
   background-color: #f84545;
 }
+.btn--warning{
+  background-color: #f84545;
+}
 /*size*/
 .btn--lg{
   font-size: 22px;
