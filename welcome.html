@@ -52,6 +52,7 @@
 		        FB.logout(function(response) {
 					statusChangeCallback(response);
 		    	}
+		    }
 		    // getting basic user info
 		    function getInfo() {
 		        FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
