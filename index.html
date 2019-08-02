@@ -135,65 +135,50 @@ version: 'v3.3'
 });
 
 FB.getLoginStatus(function(response) {
-statusChangeCallback(response);
-});
-};
+            if (response.status === 'connected') {
+                document.getElementById('status').innerHTML = 'We are connected.';
+                document.getElementById('login').style.visibility = 'hidden';
+            } else if (response.status === 'not_authorized') {
+                document.getElementById('status').innerHTML = 'We are not logged in.'
+            } else {
+                document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+            }
+        });
+    };
 
-// 處理各種登入身份
-function statusChangeCallback(response) {
-console.log(response);
-var target = document.getElementById("FB_STATUS_2"),
-html = "";
+    // 載入 FB SDK
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 
-// 登入 FB 且已加入會員
-if (response.status === 'connected') {
-html = "已登入 FB，並加入 WFU BLOG DEMO 應用程式<br/>";
+    // login with facebook with extra permissions
+    function login() {
+        FB.login(function(response) {
+            if (response.status === 'connected') {
+                document.getElementById('status').innerHTML = 'We are connected.';
+                document.getElementById('login').style.visibility = 'hidden';
+            } else if (response.status === 'not_authorized') {
+                document.getElementById('status').innerHTML = 'We are not logged in.'
+            } else {
+                document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+            }
+        }, {scope: 'email'});
+    }
 
-FB.api('/me?fields=id,name,email', function(response) {
-console.log(response);
-html += "會員暱稱：" + response.name + "<br/>";
-html += "會員 email：" + response.email;
-target.innerHTML = html;
-});
-}
-
-// 登入 FB, 未偵測到加入會員
-else if (response.status === "not_authorized") {
-target.innerHTML = "已登入 FB，但未加入 WFU BLOG DEMO 應用程式";
-}
-
-// 未登入 FB
-else {
-target.innerHTML = "未登入 FB";
-}
-}
-
-// 點擊登入
-$("#FB_login").click(function() {
-// 進行登入程序
-FB.login(function(response) {
-statusChangeCallback(response);
-}, {
-scope: 'public_profile,email'
-});
-});
-
-// 點擊登出
-$("#FB_logout").click(function() {
-FB.logout(function(response) {
-statusChangeCallback(response);
-});
-});
-
-// 載入 FB SDK
-(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s);
-js.id = id;
-js.src = "https://connect.facebook.net/zh_TW/sdk.js";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+    // getting basic user info
+    function getInfo() {
+        FB.api('/me', 'GET', {fields: 'first_name,last_name,name,id'}, function(response) {
+            document.getElementById('status').innerHTML = response.id;
+        });
+    }
 </script>
+
+<div id="status"></div>
+<button onclick="getInfo()">Get Info</button>
+<button onclick="login()" id="login">Login</button>
 </body>
 </html>
