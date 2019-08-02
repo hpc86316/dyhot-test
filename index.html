@@ -120,6 +120,9 @@
 	<div class="u-mt-16 u-mb-48">
 		<button onclick="login()" id="login" class="btn btn--lg btn--primary">FB 登入</button>
 	</div>
+	<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+	<div id="fb-root"></div>
+		
 	
 
 <!-- 目前狀態： -->
@@ -151,7 +154,7 @@
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
+        js.src = "//connect.facebook.net/zh_TW/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
