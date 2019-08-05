@@ -138,6 +138,7 @@
 		xfbml: false,
 		version: 'v3.3'
 		});
+	};
 
 		// 載入 FB SDK
 		(function(d, s, id){
@@ -159,11 +160,10 @@
                 document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
             }
         });
-    };
 
     // login with facebook with extra permissions
-    function login() {
-        FB.login(function(response) {
+    	function login() {
+        	FB.login(function(response) {
         	console.log(response);
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'We are connected.'; 
