@@ -163,6 +163,7 @@
     // login with facebook with extra permissions
     function login() {
         FB.login(function(response) {
+        	console.log(response);
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'We are connected.';
                 document.getElementById('login').style.visibility = 'hidden'; 
