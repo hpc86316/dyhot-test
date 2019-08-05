@@ -148,15 +148,18 @@
     	function login() {
         	FB.login(function(response) {
         	console.log(response);
-        	location.href='https://hpc86316.github.io/dyhot-test/welcome';
-            // if (response.status === 'connected') {
-            //     location.href='https://hpc86316.github.io/dyhot-test/welcome'; 
-            // } else if (response.status === 'not_authorized') {
-            //     document.getElementById('status').innerHTML = 'We are not logged in.'
-            // } else {
-            //     document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
-            // }
-        }, {scope: 'email'});
+            if (response.status === 'connected') {
+                location.href='https://hpc86316.github.io/dyhot-test/welcome'; 
+            } else if (response.status === 'not_authorized') {
+                document.getElementById('status').innerHTML = 'We are not logged in.'
+            } else {
+                document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+            }
+        }, {
+        	scope: 'email',
+        	return_scopes: true,
+        	enable_profile_selector: true
+        });
     }
 
 
@@ -171,7 +174,7 @@
     function checkLoginState() {
 	    FB.getLoginStatus(function(response) {
 	      statusChangeCallback(response);
-	    });
+	    }, true);
 	 }    
 
  	window.fbAsyncInit = function() {
