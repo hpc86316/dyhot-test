@@ -136,7 +136,6 @@
 	    	console.log(response);
 		    if (response.status === 'connected') {
 		    	document.getElementById('status').innerHTML = 'We are connected.';
-            	document.getElementById('login').style.visibility = 'hidden';
 		    }else if (response.status === 'not_authorized') {
 		      // The person is not logged into your app or we are unable to tell.
 		    	document.getElementById('status').innerHTML = 'Please log ' +
