@@ -131,14 +131,13 @@
 	<span id="FB_STATUS_2"></span>
 
 	<script>
-		window.fbAsyncInit = function() {
 		FB.init({
 		appId: '326698421605538', // 填入 FB APP ID
 		cookie: true,
 		xfbml: false,
 		version: 'v3.3'
 		});
-	};
+	
 
 		// 載入 FB SDK
 		(function(d, s, id){
@@ -150,7 +149,6 @@
     	}(document, 'script', 'facebook-jssdk'));
 
 		FB.getLoginStatus(function(response) {
-			console.log(response);
             if (response.status === 'connected') {
                 document.getElementById('status').innerHTML = 'We are connected.';
                 document.getElementById('login').style.visibility = 'hidden';
