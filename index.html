@@ -146,20 +146,21 @@
 	    }
 
     	function login() {
-        	FB.login(function(response) {
-        	console.log(response);
-            if (response.status === 'connected') {
-                location.href='https://hpc86316.github.io/dyhot-test/welcome'; 
-            } else if (response.status === 'not_authorized') {
-                document.getElementById('status').innerHTML = 'We are not logged in.'
-            } else {
-                document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
-            }
-        }, {
-        	scope: 'email',
-        	return_scopes: true,
-        	enable_profile_selector: true
-        });
+        	window.location.href='https://www.facebook.com/v4.0/dialog/oauth?client_id=326698421605538&display=popup&response_type=token&redirect_uri=https://hpc86316.github.io/dyhot-test/FB_to_welcome.html';
+        // 	FB.login(function(response) {
+        // 	console.log(response);
+        //     if (response.status === 'connected') {
+        //         location.href='https://hpc86316.github.io/dyhot-test/welcome.html'; 
+        //     } else if (response.status === 'not_authorized') {
+        //         document.getElementById('status').innerHTML = 'We are not logged in.'
+        //     } else {
+        //         document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+        //     }
+        // }, {
+        // 	scope: 'email',
+        // 	return_scopes: true,
+        // 	enable_profile_selector: true
+        // });
     }
 
 
